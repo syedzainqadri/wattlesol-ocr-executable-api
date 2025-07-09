@@ -1,0 +1,206 @@
+{
+  "summary": {
+    "total": 7,
+    "successful": 0,
+    "successRate": "0.0",
+    "totalTime": 6638,
+    "averageTime": 948.2857142857143
+  },
+  "results": [
+    {
+      "testName": "🔗 Connection Test",
+      "success": false,
+      "statusCode": 401,
+      "function": "testConnection",
+      "parameters": [],
+      "response": {
+        "error": {
+          "code": 401,
+          "message": "Request is missing required authentication credential. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.",
+          "status": "UNAUTHENTICATED",
+          "details": [
+            {
+              "@type": "type.googleapis.com/google.rpc.ErrorInfo",
+              "reason": "CREDENTIALS_MISSING",
+              "domain": "googleapis.com",
+              "metadata": {
+                "service": "script.googleapis.com",
+                "method": "google.apps.script.v1.ScriptExecution.Execute"
+              }
+            }
+          ]
+        }
+      },
+      "processingTime": 1589,
+      "timestamp": "2025-07-09T19:05:59.265Z"
+    },
+    {
+      "testName": "🏥 Health Status Check",
+      "success": false,
+      "statusCode": 401,
+      "function": "getHealthStatus",
+      "parameters": [],
+      "response": {
+        "error": {
+          "code": 401,
+          "message": "Request is missing required authentication credential. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.",
+          "status": "UNAUTHENTICATED",
+          "details": [
+            {
+              "@type": "type.googleapis.com/google.rpc.ErrorInfo",
+              "reason": "CREDENTIALS_MISSING",
+              "domain": "googleapis.com",
+              "metadata": {
+                "service": "script.googleapis.com",
+                "method": "google.apps.script.v1.ScriptExecution.Execute"
+              }
+            }
+          ]
+        }
+      },
+      "processingTime": 889,
+      "timestamp": "2025-07-09T19:06:01.167Z"
+    },
+    {
+      "testName": "⚙️ Configuration Check",
+      "success": false,
+      "statusCode": 401,
+      "function": "getConfig",
+      "parameters": [],
+      "response": {
+        "error": {
+          "code": 401,
+          "message": "Request is missing required authentication credential. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.",
+          "status": "UNAUTHENTICATED",
+          "details": [
+            {
+              "@type": "type.googleapis.com/google.rpc.ErrorInfo",
+              "reason": "CREDENTIALS_MISSING",
+              "domain": "googleapis.com",
+              "metadata": {
+                "method": "google.apps.script.v1.ScriptExecution.Execute",
+                "service": "script.googleapis.com"
+              }
+            }
+          ]
+        }
+      },
+      "processingTime": 819,
+      "timestamp": "2025-07-09T19:06:02.991Z"
+    },
+    {
+      "testName": "🔍 Image URL Validation",
+      "success": false,
+      "statusCode": 401,
+      "function": "validateImageUrl",
+      "parameters": [
+        "https://inxgxuhgziddmiwdihnz.supabase.co/storage/v1/object/public/test-ocr//handwritingtest.jpg"
+      ],
+      "response": {
+        "error": {
+          "code": 401,
+          "message": "Request is missing required authentication credential. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.",
+          "status": "UNAUTHENTICATED",
+          "details": [
+            {
+              "@type": "type.googleapis.com/google.rpc.ErrorInfo",
+              "reason": "CREDENTIALS_MISSING",
+              "domain": "googleapis.com",
+              "metadata": {
+                "method": "google.apps.script.v1.ScriptExecution.Execute",
+                "service": "script.googleapis.com"
+              }
+            }
+          ]
+        }
+      },
+      "processingTime": 826,
+      "timestamp": "2025-07-09T19:06:04.825Z"
+    },
+    {
+      "testName": "🖼️ OCR Processing - Handwriting Test",
+      "success": false,
+      "statusCode": 401,
+      "function": "processImageFromURL",
+      "parameters": [
+        "https://inxgxuhgziddmiwdihnz.supabase.co/storage/v1/object/public/test-ocr//handwritingtest.jpg",
+        "en",
+        false
+      ],
+      "response": {
+        "error": {
+          "code": 401,
+          "message": "Request is missing required authentication credential. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.",
+          "status": "UNAUTHENTICATED",
+          "details": [
+            {
+              "@type": "type.googleapis.com/google.rpc.ErrorInfo",
+              "reason": "CREDENTIALS_MISSING",
+              "domain": "googleapis.com",
+              "metadata": {
+                "method": "google.apps.script.v1.ScriptExecution.Execute",
+                "service": "script.googleapis.com"
+              }
+            }
+          ]
+        }
+      },
+      "processingTime": 841,
+      "timestamp": "2025-07-09T19:06:06.670Z"
+    },
+    {
+      "testName": "📊 OCR Statistics",
+      "success": false,
+      "statusCode": 401,
+      "function": "getOCRStatistics",
+      "parameters": [],
+      "response": {
+        "error": {
+          "code": 401,
+          "message": "Request is missing required authentication credential. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.",
+          "status": "UNAUTHENTICATED",
+          "details": [
+            {
+              "@type": "type.googleapis.com/google.rpc.ErrorInfo",
+              "reason": "CREDENTIALS_MISSING",
+              "domain": "googleapis.com",
+              "metadata": {
+                "method": "google.apps.script.v1.ScriptExecution.Execute",
+                "service": "script.googleapis.com"
+              }
+            }
+          ]
+        }
+      },
+      "processingTime": 851,
+      "timestamp": "2025-07-09T19:06:08.526Z"
+    },
+    {
+      "testName": "🧪 Quick Smoke Test",
+      "success": false,
+      "statusCode": 401,
+      "function": "quickSmokeTest",
+      "parameters": [],
+      "response": {
+        "error": {
+          "code": 401,
+          "message": "Request is missing required authentication credential. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.",
+          "status": "UNAUTHENTICATED",
+          "details": [
+            {
+              "@type": "type.googleapis.com/google.rpc.ErrorInfo",
+              "reason": "CREDENTIALS_MISSING",
+              "domain": "googleapis.com",
+              "metadata": {
+                "service": "script.googleapis.com",
+                "method": "google.apps.script.v1.ScriptExecution.Execute"
+              }
+            }
+          ]
+        }
+      },
+      "processingTime": 823,
+      "timestamp": "2025-07-09T19:06:10.353Z"
+    }
+  ]
+}

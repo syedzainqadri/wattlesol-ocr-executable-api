@@ -1,16 +1,100 @@
 /**
  * WattleSol OCR - Executable API
  * High-Performance OCR Processing for Production Use
- * 
+ *
  * DEPLOYMENT: Deploy as Executable API (not Web App)
  * PERFORMANCE: 3-5 seconds vs 10-19 seconds for Web App
- * 
+ *
  * Required APIs:
  * - Google Drive API (Advanced)
  * - Google Docs API (Advanced)
  */
 
 // Enable V8 Runtime for better performance
+
+/**
+ * Web App endpoint for testing (doGet function)
+ * This allows testing via web app URL for performance comparison
+ */
+function doGet(e) {
+  try {
+    // Test endpoint
+    if (e.parameter.test === 'true') {
+      return ContentService
+        .createTextOutput(JSON.stringify({
+          success: true,
+          message: 'WattleSol OCR Executable API is working!',
+          timestamp: new Date().toISOString(),
+          version: '1.0.0',
+          performance: 'OPTIMIZED',
+          parameters: e.parameter
+        }))
+        .setMimeType(ContentService.MimeType.JSON);
+    }
+
+    // OCR processing via URL
+    if (e.parameter.action === 'testOCR' && e.parameter.imageUrl) {
+      const startTime = new Date().getTime();
+
+      try {
+        const result = processImageFromURL(
+          e.parameter.imageUrl,
+          e.parameter.ocrLang || 'en',
+          e.parameter.ocrSecret === 'on'
+        );
+
+        const processingTime = new Date().getTime() - startTime;
+
+        return ContentService
+          .createTextOutput(JSON.stringify({
+            success: result.success,
+            text: result.text,
+            fileId: result.fileId,
+            fileName: result.fileName,
+            processingTime: processingTime,
+            language: e.parameter.ocrLang || 'en',
+            method: 'WEB_APP_OPTIMIZED',
+            timestamp: new Date().toISOString()
+          }))
+          .setMimeType(ContentService.MimeType.JSON);
+
+      } catch (error) {
+        const processingTime = new Date().getTime() - startTime;
+
+        return ContentService
+          .createTextOutput(JSON.stringify({
+            success: false,
+            error: error.toString(),
+            processingTime: processingTime,
+            method: 'WEB_APP_OPTIMIZED',
+            timestamp: new Date().toISOString()
+          }))
+          .setMimeType(ContentService.MimeType.JSON);
+      }
+    }
+
+    // Default response
+    return ContentService
+      .createTextOutput(JSON.stringify({
+        success: false,
+        error: 'Invalid request. Use ?test=true or ?action=testOCR&imageUrl=URL',
+        availableEndpoints: [
+          '?test=true - Test connection',
+          '?action=testOCR&imageUrl=URL&ocrLang=en&ocrSecret=off - Process OCR'
+        ]
+      }))
+      .setMimeType(ContentService.MimeType.JSON);
+
+  } catch (error) {
+    return ContentService
+      .createTextOutput(JSON.stringify({
+        success: false,
+        error: error.toString(),
+        timestamp: new Date().toISOString()
+      }))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+}
 
 /**
  * Main OCR function for URL-based image processing
